@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#087f86" />
+    <title>GameAboard — le pont des jeux de soirée</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='8' fill='%23087f86'/%3E%3C/svg%3E" />
+    <meta
+      name="description"
+      content="Un pont pour choisir un jeu de soirée : règles de cartes, plateaux à jouer et nœuds à réaliser, sur un port turquoise."
+    />
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="harbor" aria-hidden="true"></canvas>
+      <header class="top">
+        <div class="brand">
+          <p class="eyebrow">Pont de soirée</p>
+          <h1>GameAboard</h1>
+          <p class="lede">
+            Trois pontons, quarante jeux. On pioche une carte, on lit la règle,
+            et parfois le pont devient le plateau.
+          </p>
+        </div>
+        <div class="tools">
+          <label class="search">
+            <span class="sr">Chercher un jeu</span>
+            <input id="search" type="search" placeholder="Chercher un jeu, un nœud, une règle…" autocomplete="off" />
+          </label>
+          <button id="phare" type="button">Le phare choisit</button>
+        </div>
+      </header>
+      <nav class="themes" aria-label="Thèmes">
+        <button type="button" class="theme is-on" data-theme="tous">Tous les pontons</button>
+        <button type="button" class="theme" data-theme="cartes">Jeux de carte</button>
+        <button type="button" class="theme" data-theme="interactif">Jeux intéractif</button>
+        <button type="button" class="theme" data-theme="noeuds">Nœuds</button>
+      </nav>
+      <p id="count" class="count" aria-live="polite"></p>
+      <main id="dock" class="dock" aria-label="Jeux"></main>
+      <p id="empty" class="empty" hidden>Aucun jeu sur ce ponton. Essaie un autre mot, ou reviens à tous les thèmes.</p>
+    </div>
+    <dialog id="sheet">
+      <article class="sheet">
+        <header class="sheet-head">
+          <div>
+            <p id="sheet-kicker" class="eyebrow"></p>
+            <h2 id="sheet-title"></h2>
+            <p id="sheet-meta" class="meta"></p>
+          </div>
+          <button id="sheet-close" type="button">Fermer</button>
+        </header>
+        <div id="sheet-body"></div>
+      </article>
+    </dialog>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
